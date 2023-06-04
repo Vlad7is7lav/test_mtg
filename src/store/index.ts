@@ -11,14 +11,10 @@ const store = configureStore({
   },
 })
 
-console.log(Object.keys(data.en).length)
-
 syncTranslationWithStore(store)
 store.dispatch(loadTranslations(data))
 store.dispatch(setTotalReviews(Object.keys(data.en).length))
 store.dispatch(setLocale("ru"))
-
-console.log(store.getState())
 
 export default store
 

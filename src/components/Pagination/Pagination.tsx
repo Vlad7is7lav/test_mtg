@@ -32,7 +32,7 @@ export class Pagination extends React.Component<IPaginationProps> {
           </button>
           {this.props.nav &&
             (this.props.nav.total > 4 ? (
-              <span className={s.navigation}>
+              <div className={s.navigation}>
                 {this.props.nav.current === 1 ? (
                   <>
                     <span className={s.pageCurrent}> 1 </span>
@@ -53,15 +53,24 @@ export class Pagination extends React.Component<IPaginationProps> {
                 ) : null}
 
                 {this.props.nav.current === this.props.nav.total ? (
-                  <span className={s.pageCurrent}> {this.props.nav.total} </span>
+                  <>
+                    <span className={s.page}> {this.props.nav.total - 1} </span>
+                    <span className={s.pageCurrent}> {this.props.nav.total} </span>
+                  </>
                 ) : (
                   <span className={s.page}> {this.props.nav.total} </span>
                 )}
-              </span>
+              </div>
             ) : (
-              <span className={s.navigation}>
-                {this.props.nav.current} / {this.props.nav.total}
-              </span>
+              <>
+                <span className={s.navigation}>
+                  {Array.from(Array(4), () => 0).map((el, i) => (
+                    <span className={this.props.nav?.current === i + 1 ? s.pageCurrent : s.page}>
+                      {i + 1}
+                    </span>
+                  ))}
+                </span>
+              </>
             ))}
 
           <button

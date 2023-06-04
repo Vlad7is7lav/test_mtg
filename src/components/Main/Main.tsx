@@ -79,7 +79,6 @@ class Main extends React.Component<IProps, IState> {
       this.height = 20
       this.getMaxItemHeight()
       this.setMaxItemHeight()
-      console.log(this.height)
     }
   }
 

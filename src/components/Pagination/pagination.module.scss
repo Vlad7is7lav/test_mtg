@@ -2,6 +2,9 @@
 
 .pagination {
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .prevArrow,
 .nextArrow {
@@ -44,6 +47,10 @@
     color: #444;
     cursor: not-allowed;
   }
+}
+
+.navigation {
+  width: 200px;
 }
 
 .pageCurrent,
