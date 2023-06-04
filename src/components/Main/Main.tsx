@@ -73,7 +73,7 @@ class Main extends React.Component<IProps, IState> {
     this.setMaxItemHeight()
   }
 
-  componentDidUpdate(prevProps: IProps, prevState:IState): void {
+  componentDidUpdate(prevProps: IProps, prevState: IState): void {
     if (this.props.review.pageNumber != prevProps.review.pageNumber || prevState.show != this.state.show) {
       this.setState({ show: true })
       this.height = 20
@@ -94,32 +94,32 @@ class Main extends React.Component<IProps, IState> {
       items = review.totalReviews - (review.pageNumber - 1) * items
     }
     return (
-        <div className={s.wrapper}>
-          <div>
-            <div className={s.main}>
-              {this.state.show &&
-                Array.from(Array(items), () => 0).map((el, i) => {
-                  return (
-                    <Review
-                      refa={this.mainRefs[i]}
-                      height={this.height}
-                      key={i}
-                      item={i18n.translations[i18n.locale][`client_${i + 1 + 10 * (review.pageNumber - 1)}`]}
-                    />
-                  )
-                })}
-            </div>
+      <div className={s.wrapper}>
+        <div>
+          <div className={s.main}>
+            {this.state.show &&
+              Array.from(Array(items), () => 0).map((el, i) => {
+                return (
+                  <Review
+                    refa={this.mainRefs[i]}
+                    height={this.height}
+                    key={i}
+                    item={i18n.translations[i18n.locale][`client_${i + 1 + 10 * (review.pageNumber - 1)}`]}
+                  />
+                )
+              })}
           </div>
-          <Pagination
-            onNextPageClick={this.handleNextPageClick}
-            onPrevPageClick={this.handlePrevPageClick}
-            disable={{
-              prev: review.pageNumber === 1,
-              next: review.pageNumber === this.getTotalPagesAmount(40),
-            }}
-            nav={{ current: review.pageNumber, total: this.getTotalPagesAmount(40) }}
-          />
         </div>
+        <Pagination
+          onNextPageClick={this.handleNextPageClick}
+          onPrevPageClick={this.handlePrevPageClick}
+          disable={{
+            prev: review.pageNumber === 1,
+            next: review.pageNumber === this.getTotalPagesAmount(review.totalReviews),
+          }}
+          nav={{ current: review.pageNumber, total: this.getTotalPagesAmount(review.totalReviews) }}
+        />
+      </div>
     )
   }
 }

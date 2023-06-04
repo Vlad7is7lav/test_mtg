@@ -1,26 +1,27 @@
-@use '../../styles/' as *;
+@use "../../styles/" as *;
 
 .pagination {
   user-select: none;
 }
-.prevArrow, .nextArrow {
-	display: inline-block;	
-	box-sizing: border-box;
-	padding: 0 25px;
-	margin: 20px;
-	outline: none;
-	border: 1px solid #fff;
-	border-radius: 50px;
-	height: 46px;
-	line-height: 46px;
-	font-size: 24px;
-	font-weight: 600;
-	text-decoration: none;
-	color: #444;
-	background-color: #fff;
-	box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
-	cursor: pointer;
-	transition: box-shadow 0.2s;
+.prevArrow,
+.nextArrow {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 25px;
+  margin: 20px;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  height: 46px;
+  line-height: 46px;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #444;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
   user-select: none;
 
   &:focus-visible {
@@ -43,4 +44,20 @@
     color: #444;
     cursor: not-allowed;
   }
+}
+
+.pageCurrent,
+.page {
+  font-size: 20px;
+  border: 1px solid grey;
+  margin: 0 5px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.pageCurrent {
+  color: blue;
+  font-weight: bold;
 }
