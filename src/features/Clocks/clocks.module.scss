@@ -1,0 +1,33 @@
+@use '../../styles/' as *;
+
+.clocks {
+  width: 100vw;
+  font-size: 50px;
+  line-height: 100px;
+  font-weight: bold;
+  color: rgba($color-dark-green, .5);
+  height: 100px;
+  text-align: center;
+  animation-name: ClockShow;
+  animation-duration: .5s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  
+
+  @include mobile-tablet {
+    font-size: 30px;
+  }
+}
+
+@keyframes ClockShow {
+  from  {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../../styles/' as *;
+
+.review {
+  width: 100%;
+  max-width: 295px;
+  display: flex;
+  flex-direction: column;
+  color: $color-black;
+  text-align: left;
+  height: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: $color-light-grey;
+  box-shadow: 4px 4px 8px 0px $color-shadow-1;
+  min-height: 188px;
+
+  @media (max-width: 679px) {
+    max-width: 100%;
+  } 
+ 
+  .reviewName {
+    font-size: 20px;
+    line-height: 20px;
+    color: darkgray
+  }
+
+  .reviewBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    
+  }
+
+  .reviewtext {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .reviewDate {
+    font-size: 18px;
+    line-height: 18px;
+    text-align: right;
+  }
+}

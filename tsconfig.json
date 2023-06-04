@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "sourceMap": true,
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": "src",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +20,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "strictPropertyInitialization": false
   },
+  "exclude": ["node_modules", "build", "coverage", "webpack.*.js", "*.config.js", "*.test.ts*"],
   "include": [
     "src"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
